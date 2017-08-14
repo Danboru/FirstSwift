@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		57C9473B1F2584DB0091CF42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9473A1F2584DB0091CF42 /* AppDelegate.swift */; };
-		57C9473D1F2584DB0091CF42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9473C1F2584DB0091CF42 /* ViewController.swift */; };
+		57C9473D1F2584DB0091CF42 /* JogjaOrganic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9473C1F2584DB0091CF42 /* JogjaOrganic.swift */; };
 		57C947401F2584DB0091CF42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C9473E1F2584DB0091CF42 /* Main.storyboard */; };
 		57C947421F2584DB0091CF42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57C947411F2584DB0091CF42 /* Assets.xcassets */; };
 		57C947451F2584DB0091CF42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C947431F2584DB0091CF42 /* LaunchScreen.storyboard */; };
+		57D90C071F41ADEC00B65F9D /* BerduResi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D90C061F41ADEC00B65F9D /* BerduResi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		57C947371F2584DB0091CF42 /* Jogja Organic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jogja Organic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C9473A1F2584DB0091CF42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		57C9473C1F2584DB0091CF42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57C9473C1F2584DB0091CF42 /* JogjaOrganic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogjaOrganic.swift; sourceTree = "<group>"; };
 		57C9473F1F2584DB0091CF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57C947411F2584DB0091CF42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57C947441F2584DB0091CF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57C947461F2584DB0091CF42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57D90C061F41ADEC00B65F9D /* BerduResi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BerduResi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		57C947391F2584DB0091CF42 /* Jogja Organic */ = {
 			isa = PBXGroup;
 			children = (
+				57D90C051F41AD9600B65F9D /* Controller */,
 				57C9473A1F2584DB0091CF42 /* AppDelegate.swift */,
-				57C9473C1F2584DB0091CF42 /* ViewController.swift */,
 				57C9473E1F2584DB0091CF42 /* Main.storyboard */,
 				57C947411F2584DB0091CF42 /* Assets.xcassets */,
 				57C947431F2584DB0091CF42 /* LaunchScreen.storyboard */,
 				57C947461F2584DB0091CF42 /* Info.plist */,
 			);
 			path = "Jogja Organic";
+			sourceTree = "<group>";
+		};
+		57D90C051F41AD9600B65F9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57C9473C1F2584DB0091CF42 /* JogjaOrganic.swift */,
+				57D90C061F41ADEC00B65F9D /* BerduResi.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +107,7 @@
 				TargetAttributes = {
 					57C947361F2584DB0091CF42 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = K55QS8V79L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,7 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57C9473D1F2584DB0091CF42 /* ViewController.swift in Sources */,
+				57D90C071F41ADEC00B65F9D /* BerduResi.swift in Sources */,
+				57C9473D1F2584DB0091CF42 /* JogjaOrganic.swift in Sources */,
 				57C9473B1F2584DB0091CF42 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,11 +275,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K55QS8V79L;
 				INFOPLIST_FILE = "Jogja Organic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eightstudio.www.Jogja-Organic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -274,11 +289,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K55QS8V79L;
 				INFOPLIST_FILE = "Jogja Organic/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eightstudio.www.Jogja-Organic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -301,6 +318,7 @@
 				57C9474B1F2584DB0091CF42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
