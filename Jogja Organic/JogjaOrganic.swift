@@ -19,10 +19,16 @@ class JogjaOrganic: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
-        let url = NSURL (string: "http://www.jogjaorganik.com/");
-        let requestObj = NSURLRequest(url: url! as URL);
-        myWorldWebView.loadRequest(requestObj as URLRequest);
+        if connectedToNetwork() == true {
+            jogajaOrganicLabelConnection.isHidden = true
+            
+            // Do any additional setup after loading the view, typically from a nib.
+            let url = NSURL (string: "http://www.jogjaorganik.com/");
+            let requestObj = NSURLRequest(url: url! as URL);
+            myWorldWebView.loadRequest(requestObj as URLRequest);
+        } else {
+            jogajaOrganicLabelConnection.isHidden = false
+        }
         
     }
 
