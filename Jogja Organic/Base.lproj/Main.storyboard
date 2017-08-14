@@ -106,6 +106,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="RJo-ie-wBM"/>
                     <connections>
+                        <outlet property="connectionStatusBerdu" destination="A0X-Bt-S8s" id="UZW-5b-qEh"/>
                         <outlet property="mySportWebView" destination="ld8-Se-8BW" id="qZu-Zl-bxK"/>
                     </connections>
                 </viewController>

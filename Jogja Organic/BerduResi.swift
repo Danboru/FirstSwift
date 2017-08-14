@@ -11,6 +11,7 @@ import SystemConfiguration
 
 class BerduResi: UIViewController {
 
+    @IBOutlet weak var connectionStatusBerdu: UILabel!
     
     @IBOutlet weak var mySportWebView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -18,13 +19,15 @@ class BerduResi: UIViewController {
         super.viewDidLoad()
 
         if connectedToNetwork() == true {
-            
+            connectionStatusBerdu.isHidden = true
             // Do any additional setup after loading the view, typically from a nib.
-//            let url = NSURL (string: "https://berdu.id/cek-resi");
-//            let requestObj = NSURLRequest(url: url! as URL);
-//            mySportWebView.loadRequest(requestObj as URLRequest);
+            let url = NSURL (string: "https://berdu.id/cek-resi");
+            let requestObj = NSURLRequest(url: url! as URL);
+            mySportWebView.loadRequest(requestObj as URLRequest);
             
-        } 
+        } else {
+            connectionStatusBerdu.isHidden = false
+        }
         
     }
 
