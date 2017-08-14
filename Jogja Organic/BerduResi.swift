@@ -17,10 +17,14 @@ class BerduResi: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view, typically from a nib.
-        let url = NSURL (string: "https://berdu.id/cek-resi");
-        let requestObj = NSURLRequest(url: url! as URL);
-        mySportWebView.loadRequest(requestObj as URLRequest);
+        if connectedToNetwork() == true {
+            
+            // Do any additional setup after loading the view, typically from a nib.
+//            let url = NSURL (string: "https://berdu.id/cek-resi");
+//            let requestObj = NSURLRequest(url: url! as URL);
+//            mySportWebView.loadRequest(requestObj as URLRequest);
+            
+        } 
         
     }
 
