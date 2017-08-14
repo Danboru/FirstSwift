@@ -54,6 +54,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Ti9-BJ-oeh"/>
                     <connections>
+                        <outlet property="jogajaOrganicLabelConnection" destination="8bU-vo-Ihq" id="Wof-UF-xmg"/>
                         <outlet property="myWorldWebView" destination="zsq-Kp-89V" id="zO4-Ke-mKU"/>
                     </connections>
                 </viewController>

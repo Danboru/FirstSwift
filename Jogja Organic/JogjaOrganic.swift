@@ -12,6 +12,7 @@ import SystemConfiguration
 class JogjaOrganic: UIViewController {
     
 
+    @IBOutlet weak var jogajaOrganicLabelConnection: UILabel!
     
     @IBOutlet weak var myWorldWebView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
