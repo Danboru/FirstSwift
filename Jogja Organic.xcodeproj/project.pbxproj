@@ -13,6 +13,7 @@
 		57C947421F2584DB0091CF42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57C947411F2584DB0091CF42 /* Assets.xcassets */; };
 		57C947451F2584DB0091CF42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C947431F2584DB0091CF42 /* LaunchScreen.storyboard */; };
 		57D90C071F41ADEC00B65F9D /* BerduResi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D90C061F41ADEC00B65F9D /* BerduResi.swift */; };
+		57F4DA4B1F42757300241230 /* nointernet.png in Resources */ = {isa = PBXBuildFile; fileRef = 57F4DA4A1F42757300241230 /* nointernet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		57C947441F2584DB0091CF42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57C947461F2584DB0091CF42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57D90C061F41ADEC00B65F9D /* BerduResi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BerduResi.swift; sourceTree = "<group>"; };
+		57F4DA4A1F42757300241230 /* nointernet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nointernet.png; path = ../../../Downloads/nointernet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		57C947391F2584DB0091CF42 /* Jogja Organic */ = {
 			isa = PBXGroup;
 			children = (
+				57F4DA491F4274F500241230 /* Images */,
 				57D90C051F41AD9600B65F9D /* Controller */,
 				57C9473A1F2584DB0091CF42 /* AppDelegate.swift */,
 				57C9473E1F2584DB0091CF42 /* Main.storyboard */,
@@ -73,6 +76,14 @@
 				57D90C061F41ADEC00B65F9D /* BerduResi.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		57F4DA491F4274F500241230 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				57F4DA4A1F42757300241230 /* nointernet.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 				57C947451F2584DB0091CF42 /* LaunchScreen.storyboard in Resources */,
 				57C947421F2584DB0091CF42 /* Assets.xcassets in Resources */,
 				57C947401F2584DB0091CF42 /* Main.storyboard in Resources */,
+				57F4DA4B1F42757300241230 /* nointernet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

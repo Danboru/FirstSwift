@@ -11,14 +11,29 @@ import SystemConfiguration
 
 class BerduResi: UIViewController {
 
+    //ButtonView
+    @IBOutlet weak var buttonBack: UIButton!
+    @IBOutlet weak var buttonForward: UIButton!
+    
+    //ImageView
+    @IBOutlet weak var internetImage: UIImageView!
+    
+    //LabelView
     @IBOutlet weak var connectionStatusBerdu: UILabel!
     
+    //UIWebView
     @IBOutlet weak var mySportWebView: UIWebView!
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        connectionStatusBerdu.center = self.view.center
+        self.view.addSubview(connectionStatusBerdu)
+
+        
         if connectedToNetwork() == true {
+            internetImage.isHidden = true
             connectionStatusBerdu.isHidden = true
             // Do any additional setup after loading the view, typically from a nib.
             let url = NSURL (string: "https://berdu.id/cek-resi");
@@ -26,7 +41,14 @@ class BerduResi: UIViewController {
             mySportWebView.loadRequest(requestObj as URLRequest);
             
         } else {
+            //Bold
+            connectionStatusBerdu.font = UIFont.boldSystemFont(ofSize: connectionStatusBerdu.font.pointSize)
             connectionStatusBerdu.isHidden = false
+            self.buttonBack.isHidden = true
+            self.buttonForward.isHidden = true
+            //Color
+            view.backgroundColor = .black
+            
         }
         
     }
@@ -37,14 +59,17 @@ class BerduResi: UIViewController {
     }
 
 
+    //Fungsi Button Back
     @IBAction func berduBack(_ sender: Any) {
         mySportWebView.goBack()
     }
     
+    //Fungsi Button Forward
     @IBAction func berduForward(_ sender: Any) {
         mySportWebView.goForward()
     }
     
+    //Fungsi untuk cek koneksi internet, jika true = tidak ada internet, jika false = ada internet
     func connectedToNetwork() -> Bool {
         
         var zeroAddress = sockaddr_in()

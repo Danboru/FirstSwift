@@ -11,15 +11,29 @@ import SystemConfiguration
 
 class JogjaOrganic: UIViewController {
     
+    //ButtonView
+    @IBOutlet weak var buttonBackJogjaOrganic: UIButton!
+    @IBOutlet weak var buttonForwardJogjaOrganic: UIButton!
+    
+    //ImageView
+    @IBOutlet weak var internetImagesJogjaOrganic: UIImageView!
 
+    //LabelView
     @IBOutlet weak var jogajaOrganicLabelConnection: UILabel!
     
+    //UIWebView
     @IBOutlet weak var myWorldWebView: UIWebView!
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        jogajaOrganicLabelConnection.center = self.view.center
+        self.view.addSubview(jogajaOrganicLabelConnection)
+        
         if connectedToNetwork() == true {
+            internetImagesJogjaOrganic.isHidden = true
             jogajaOrganicLabelConnection.isHidden = true
             
             // Do any additional setup after loading the view, typically from a nib.
@@ -27,7 +41,13 @@ class JogjaOrganic: UIViewController {
             let requestObj = NSURLRequest(url: url! as URL);
             myWorldWebView.loadRequest(requestObj as URLRequest);
         } else {
+            //Bold
+            jogajaOrganicLabelConnection.font = UIFont.boldSystemFont(ofSize: jogajaOrganicLabelConnection.font.pointSize)
             jogajaOrganicLabelConnection.isHidden = false
+            self.buttonBackJogjaOrganic.isHidden = true
+            self.buttonForwardJogjaOrganic.isHidden = true
+            //Color
+            view.backgroundColor = .black
         }
         
     }
@@ -38,14 +58,17 @@ class JogjaOrganic: UIViewController {
     }
     
     
+    //Fungsi Button Back
     @IBAction func jogjaOrganicBack(_ sender: Any) {
         myWorldWebView.goBack()
     }
  
+    //Fungsi Button Forward
     @IBAction func jogjaOrganicForward(_ sender: Any) {
         myWorldWebView.goForward()
     }
     
+    //Fungsi untuk cek koneksi internet, jika true = tidak ada internet, jika false = ada internet
     func connectedToNetwork() -> Bool {
         
         var zeroAddress = sockaddr_in()
