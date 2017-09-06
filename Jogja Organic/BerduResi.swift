@@ -42,6 +42,7 @@ class BerduResi: UIViewController {
             let url = NSURL (string: "https://berdu.id/cek-resi");
             let requestObj = NSURLRequest(url: url! as URL);
             mySportWebView.loadRequest(requestObj as URLRequest);
+            self.buttonGotoSetting.isHidden = true
             
         } else {
             //Bold
@@ -49,6 +50,8 @@ class BerduResi: UIViewController {
             connectionStatusBerdu.isHidden = false
             self.buttonBack.isHidden = true
             self.buttonForward.isHidden = true
+            self.buttonGotoSetting.isHidden = false
+            
             //Color
             view.backgroundColor = .black
             
@@ -127,7 +130,8 @@ class BerduResi: UIViewController {
         let isReachable = flags.contains(.reachable)
         let needsConnection = flags.contains(.connectionRequired)
         
-        return (isReachable && !needsConnection)
+        //Harus true dan true = true
+        return (isReachable && !needsConnection)//Mengembalikan data
     }
     
 }

@@ -31,11 +31,11 @@ class JogjaOrganic: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        //UILabel
         jogajaOrganicLabelConnection.center = self.view.center
         self.view.addSubview(jogajaOrganicLabelConnection)
         
-        if connectedToNetwork() == true {
+        if connectedToNetwork() == true {//Ada koneksi
             
             jogajaOrganicLabelConnection.isHidden = true
             
@@ -43,23 +43,28 @@ class JogjaOrganic: UIViewController {
             let url = NSURL (string: "http://www.jogjaorganik.com/");
             let requestObj = NSURLRequest(url: url! as URL);
             myWorldWebView.loadRequest(requestObj as URLRequest);
-        } else {
+            
+            self.buttonGotoSetting.isHidden = true //Hide Button
+            
+        } else {//Tidak ada koneksi
+            
             //Bold
             jogajaOrganicLabelConnection.font = UIFont.boldSystemFont(ofSize: jogajaOrganicLabelConnection.font.pointSize)
             jogajaOrganicLabelConnection.isHidden = false
             self.buttonBackJogjaOrganic.isHidden = true
             self.buttonForwardJogjaOrganic.isHidden = true
+            self.buttonGotoSetting.isHidden = false
+            
             //Color
             view.backgroundColor = .black
         }
-        
     }
 
+    //Stub function
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     //Fungsi Button Back
     @IBAction func jogjaOrganicBack(_ sender: Any) {
@@ -71,7 +76,7 @@ class JogjaOrganic: UIViewController {
         myWorldWebView.goForward()
     }
     
-    
+    //Acton button buttonGotoSetting
     @IBAction func gotoSetting(_ sender: UIButton) {
         
         //Object Alert Controller
@@ -125,7 +130,8 @@ class JogjaOrganic: UIViewController {
         let isReachable = flags.contains(.reachable)
         let needsConnection = flags.contains(.connectionRequired)
         
-        return (isReachable && !needsConnection)
+        //Harus true dan true = true
+        return (isReachable && !needsConnection)//Mengembalikan data
     }
     
 }
