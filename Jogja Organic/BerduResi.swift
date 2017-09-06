@@ -24,6 +24,9 @@ class BerduResi: UIViewController {
     //UIWebView
     @IBOutlet weak var mySportWebView: UIWebView!
     
+    //UIButton
+    @IBOutlet weak var buttonGotoSetting: UIButton!
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,7 @@ class BerduResi: UIViewController {
 
         
         if connectedToNetwork() == true {
-            internetImage.isHidden = true
+           
             connectionStatusBerdu.isHidden = true
             // Do any additional setup after loading the view, typically from a nib.
             let url = NSURL (string: "https://berdu.id/cek-resi");
@@ -69,6 +72,37 @@ class BerduResi: UIViewController {
         mySportWebView.goForward()
     }
     
+    @IBAction func gotoSetting(_ sender: UIButton) {
+        
+        //Object Alert Controller
+        let alertController = UIAlertController (title: "Title", message: "Go to Settings?", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+            guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                return
+            }
+            
+            //Jika alert dialog menereima string location yang di tuju
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)") // Prints true
+                })
+            }
+        }
+        
+        //let settingsAction = UIAlertAction(title: "Setting", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        //Menambahkan Action
+        alertController.addAction(cancelAction)
+        //alertController.addAction(settingsAction)
+        alertController.addAction(settingsAction)
+        
+        //Menampilkan alert yang sudah di addAction
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
     //Fungsi untuk cek koneksi internet, jika true = tidak ada internet, jika false = ada internet
     func connectedToNetwork() -> Bool {
         
@@ -80,6 +114,7 @@ class BerduResi: UIViewController {
             $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
                 SCNetworkReachabilityCreateWithAddress(nil, $0)
             }
+            
         }) else {
             return false
         }
